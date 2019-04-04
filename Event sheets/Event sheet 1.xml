@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-group description="" sid="344106890679979" title="Movment">
+            <sub-events>
+                <event-block sid="725215279792215">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="947180879118980" type="Keyboard">
+                            <param id="0" name="Key">39</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="960696194760301" type="Hero">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="868822221210547">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="846568083003146" type="Keyboard">
+                            <param id="0" name="Key">37</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="168448364129799" type="Hero">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="169621253277044">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="792880251509470" type="Hero" />
+                        <condition behavior="Platform" id="0" name="Is moving" sid="470618211778272" type="Hero" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="510458343254134" type="Hero">
+                            <param id="0" name="Animation">&quot;Run&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="327260533529057">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="923768578258912" type="Hero" />
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="952595700905356" type="Hero" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="362507541843185" type="Hero">
+                            <param id="0" name="Animation"> &quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="956578649408584">
+                    <conditions>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="624268649675489" type="Hero" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="830300436565212" type="Hero">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="915013492650467">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="485054827083821" type="Hero" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="177643454635225" type="Hero">
+                            <param id="0" name="Animation">&quot;Fall&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="383668980769295">
+            <conditions>
+                <condition id="2" name="Key is down" sid="468397394931874" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="394084404074174" type="Hero">
+                    <param id="0" name="Animation">&quot;Squat&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
