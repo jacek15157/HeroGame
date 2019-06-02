@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="health" sid="259222286958709" static="0" type="number">15</variable>
+        <variable constant="0" name="score" sid="610932615238097" static="0" type="number">0</variable>
+        <event-group description="" sid="927284162236394" title="Movement">
+            <sub-events>
+                <event-block sid="824710941973562">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="225453858002152" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="638173883256550" type="Sprite">
+                            <param id="0" name="Frame number">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="384275435150130">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="673358425894303" type="Keyboard">
+                            <param id="0" name="Key">39</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="881874580536483" type="Sprite">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="510188501685881">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="413262583618697" type="Keyboard">
+                            <param id="0" name="Key">37</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="408942377787688" type="Sprite">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="939856390966467">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="140116219772432" type="Sprite" />
+                        <condition behavior="Platform" id="0" name="Is moving" sid="972207509167083" type="Sprite" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="360506562265726" type="Sprite">
+                            <param id="0" name="Animation">&quot;Run&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="216428185451978">
+                    <conditions>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="211710634861809" type="Sprite" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="140233251628427" type="Sprite">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="193845528668543">
+                    <conditions />
+                    <actions>
+                        <action id="4" name="Set animation" sid="452409214355129" type="Sprite">
+                            <param id="0" name="Animation">&quot;Fall&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="352754307778769">
+                    <conditions>
+                        <condition behavior="Platform" id="10" inverted="1" name="Is by wall" sid="720293576340263" type="Sprite">
+                            <param id="0" name="Side">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="6" name="Set max fall speed" sid="882114799868518" type="Sprite">
+                            <param id="0" name="Max fall speed">800</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="743308438292912">
+                    <conditions>
+                        <condition behavior="Platform" id="10" inverted="1" name="Is by wall" sid="722753722017687" type="Sprite">
+                            <param id="0" name="Side">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="368705656444672">
+                    <conditions>
+                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="909310444386421" type="Sprite" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="817246753824194">
+                            <conditions>
+                                <condition behavior="Platform" id="10" name="Is by wall" sid="715683435919349" type="Sprite">
+                                    <param id="0" name="Side">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="755353220459010" type="Sprite">
+                                    <param id="0" name="Max fall speed">50</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="185054795898195" type="Sprite">
+                                    <param id="0" name="Animation">&quot;WallSlide&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="776682178274296" type="Sprite">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="518617866715276">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="351894434536999" type="Keyboard">
+                                            <param id="0" name="Key">38</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="665167828892791" type="Sprite">
+                                            <param id="0" name="Vector X">-500</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="350072947123163" type="Sprite">
+                                            <param id="0" name="Vector Y">-500</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="582986791714043">
+                            <conditions>
+                                <condition behavior="Platform" id="10" name="Is by wall" sid="424957358203722" type="Sprite">
+                                    <param id="0" name="Side">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="934750420821295" type="Sprite">
+                                    <param id="0" name="Max fall speed">50</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="263337620565196" type="Sprite">
+                                    <param id="0" name="Animation">&quot;WallSlide&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="439105505850650" type="Sprite">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="583660876481838">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="756831107637045" type="Keyboard">
+                                            <param id="0" name="Key">38</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="782391340812190" type="Sprite">
+                                            <param id="0" name="Vector X">500</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="452491904071299" type="Sprite">
+                                            <param id="0" name="Vector Y">-500</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="618167659956830">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="807229585531337" type="Sprite" />
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="786454349015939" type="Sprite" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="598738732614016" type="Sprite">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="317175226180658" title="Coins">
+            <sub-events>
+                <event-block sid="507548115440074">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="786553076912666" type="Sprite5">
+                            <param id="0" name="Object">Sprite</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="126222483206085" type="Sprite5" />
+                        <action id="-10" name="Add to" sid="532254254554612" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="336221695838385">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="321780549969271" type="Sprite6">
+                            <param id="0" name="Object">Sprite</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="725982293958323" type="Sprite6" />
+                        <action id="-10" name="Add to" sid="660953792145216" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="205969982503472" type="System">
+                            <param id="0" name="Layout">YouWin</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="739349873376334" title="HUD">
+            <sub-events>
+                <event-block sid="630912507435118">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Set text" sid="101605308572640" type="HUDScore">
+                            <param id="0" name="Text">score</param>
+                        </action>
+                        <action id="0" name="Set text" sid="789614492744639" type="HUDHealth">
+                            <param id="0" name="Text">health</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="461709551165260" title="Spikes">
+            <sub-events>
+                <event-block sid="143866541717237">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="553898045308703" type="Sprite">
+                            <param id="0" name="Object">Sprite7</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="434259931593844">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="693297522648208" type="Sprite">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="X co-ordinate">Sprite7.X</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="656377535753547" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="446817108757799" type="Sprite">
+                                    <param id="0" name="Vector X">-275</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="163214996410596" type="Sprite">
+                                    <param id="0" name="Vector Y">-275</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="935371233416779">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="499540750024231" type="Sprite">
+                                            <param id="0" name="Instance variable">invul</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="796767465504318" type="System">
+                                            <param id="0" name="Variable">health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="824853415725852" type="Sprite">
+                                            <param id="0" name="Instance variable">invul</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="470394334864783">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="187596450546274" type="Sprite">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">Sprite7.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="975162624543740" type="Sprite">
+                                    <param id="0" name="Vector X">275</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="157794126264698" type="Sprite">
+                                    <param id="0" name="Vector Y">275</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="274261582551351">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="145936249190105" type="Sprite">
+                                            <param id="0" name="Instance variable">invul</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="378840340427387" type="System">
+                                            <param id="0" name="Variable">health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="691949929714311" type="Sprite">
+                                            <param id="0" name="Instance variable">invul</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="811255223283655" title="Player">
+            <sub-events>
+                <event-group description="" sid="641116957302851" title="Invulnerability">
+                    <sub-events>
+                        <event-block sid="738509937681335">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="756470940526994" type="Sprite">
+                                    <param id="0" name="Instance variable">invul</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="589381712933149" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Timer" id="0" name="Start timer" sid="832919535670193" type="Sprite">
+                                    <param id="0" name="Duration">1.0</param>
+                                    <param id="1" name="Type">0</param>
+                                    <param id="2" name="Tag">&quot;invul&quot;</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="336288581045335" type="Sprite">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="390803302788979">
+                            <conditions>
+                                <condition behavior="Timer" id="0" name="On timer" sid="593416346145991" type="Sprite">
+                                    <param id="0" name="Tag">&quot;invul&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="105562024820415" type="Sprite">
+                                    <param id="0" name="Instance variable">invul</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="748984715248458" title="Enemies">
+            <sub-events>
+                <event-group description="" sid="944503046155610" title="MovieFireBall">
+                    <sub-events>
+                        <event-group description="" sid="235610088460255" title="Player Interaction">
+                            <sub-events>
+                                <event-block sid="317654899048810">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="403766874397475" type="Sprite">
+                                            <param id="0" name="Object">Sprite8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="324732317708014">
+                                            <conditions>
+                                                <condition id="-2" name="Compare Y" sid="159506554861862" type="Sprite">
+                                                    <param id="0" name="Comparison">2</param>
+                                                    <param id="1" name="Y co-ordinate">Sprite8.Y - 5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="122479891826104" type="Sprite">
+                                                    <param id="0" name="Vector Y">-400</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="412199094880031" type="Sprite8">
+                                                    <param id="0" name="Animation">&quot;Death&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="747579874698685" type="System">
+                                                    <param id="0" name="Seconds">1.0</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="890227001956288" type="Sprite8" />
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="129681058793504" type="Sprite8">
+                                                    <param id="0" name="Vector Y">-200</param>
+                                                </action>
+                                                <action id="11" name="Set collisions enabled" sid="243089234059196" type="Sprite8">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="440991664352748">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="762269831308352" type="System" />
+                                                <condition id="-1" name="Compare X" sid="732165641304982" type="Sprite">
+                                                    <param id="0" name="Comparison">2</param>
+                                                    <param id="1" name="X co-ordinate">Sprite8.X </param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="239716242746571" type="Sprite">
+                                                    <param id="0" name="Vector X">-200</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="229391432718830">
+                                                    <conditions>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="845232100871200" type="Sprite">
+                                                            <param id="0" name="Instance variable">invul</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-11" name="Subtract from" sid="257193045718542" type="System">
+                                                            <param id="0" name="Variable">health</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-13" name="Set boolean" sid="936382363642920" type="Sprite">
+                                                            <param id="0" name="Instance variable">invul</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="861695108784133">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="402286133072623" type="System" />
+                                                <condition id="-1" name="Compare X" sid="357115075525713" type="Sprite">
+                                                    <param id="0" name="Comparison">5</param>
+                                                    <param id="1" name="X co-ordinate">Sprite8.X </param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="403750625860089" type="Sprite">
+                                                    <param id="0" name="Vector X">200</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="849761851539209">
+                                                    <conditions>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="751268901656950" type="Sprite">
+                                                            <param id="0" name="Instance variable">invul</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-11" name="Subtract from" sid="594059600084763" type="System">
+                                                            <param id="0" name="Variable">health</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-13" name="Set boolean" sid="337141548328374" type="Sprite">
+                                                            <param id="0" name="Instance variable">invul</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="708406772912856" title="Moving">
+                            <sub-events>
+                                <event-block sid="321994901651094">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="795592335279333" type="Sprite8">
+                                            <param id="0" name="Instance variable">dir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="153200572231188" type="Sprite8">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="896287779349474">
+                                            <conditions>
+                                                <condition id="9" inverted="1" name="Is overlapping at offset" sid="814804825830322" type="Sprite8">
+                                                    <param id="0" name="Object">Sprite2</param>
+                                                    <param id="1" name="Offset X">-15</param>
+                                                    <param id="2" name="Offset Y">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="637442439316118" type="Sprite8">
+                                                    <param id="0" name="Instance variable">dir</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="565411743175291">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="899566114207756" type="Sprite8">
+                                            <param id="0" name="Instance variable">dir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="181948195498576" type="Sprite8">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="468165273766629">
+                                            <conditions>
+                                                <condition id="9" inverted="1" name="Is overlapping at offset" sid="539354626529126" type="Sprite8">
+                                                    <param id="0" name="Object">Sprite2</param>
+                                                    <param id="1" name="Offset X">14</param>
+                                                    <param id="2" name="Offset Y">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="633326689470252" type="Sprite8">
+                                                    <param id="0" name="Instance variable">dir</param>
+                                                    <param id="1" name="Value">-1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-block sid="248236595575794">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="972016754158860" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="237446182605961" type="Audio">
+                    <param id="0" name="Audio file">DesiJourney</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="640717789199626">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="832526628046002" type="System">
+                    <param id="0" name="Variable">health</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="722988303674570" type="System">
+                    <param id="0" name="Layout">gameover</param>
+                </action>
+                <action id="-9" name="Set value" sid="874782044829766" type="System">
+                    <param id="0" name="Variable">health</param>
+                    <param id="1" name="Value">15</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="242708867976355">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="589288217778168" type="Sprite">
+                    <param id="0" name="Object">Sprite6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="790986575493708" type="System">
+                    <param id="0" name="Layout">YouWin</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
